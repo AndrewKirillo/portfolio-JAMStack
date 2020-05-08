@@ -26,7 +26,7 @@ collections:
       - {label: "Start Date", name: "startDate", widget: "datetime", dateFormat: true, timeFormat: false}
       - {label: "End Date", required: false, name: "endDate", widget: "datetime", dateFormat: true, timeFormat: false}
       - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "Images", required: false, name: "images", widget: "image", allow_multiple: true}
+      - {label: "Images", label_singular: "Image", required: false, name: "images", widget: "list", field: {label: "Image", name: "image", widget: "image"}}
       - {label: "Links", required: false, name: "links", widget: "list"}
       - {label: "Technologies Used", required: false, name: "technologies", widget: "list"}
 
@@ -44,7 +44,7 @@ collections:
       - {label: "Start Date", name: "startDate", widget: "datetime", dateFormat: true, timeFormat: false}
       - {label: "End Date", required: false, name: "endDate", widget: "datetime", dateFormat: true, timeFormat: false}
       - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "Images", required: false, name: "images", widget: "image", allow_multiple: true}
+      - {label: "Images", label_singular: "Image", required: false, name: "images", widget: "list", field: {label: "Image", name: "image", widget: "image"}}
       - {label: "Links", required: false, name: "links", widget: "list"}
       - {label: "Technologies Used", required: false, name: "technologies", widget: "list"}
 
@@ -62,7 +62,7 @@ collections:
       - {label: "Start Date", name: "startDate", widget: "datetime", dateFormat: true, timeFormat: false}
       - {label: "End Date", required: false, name: "endDate", widget: "datetime", dateFormat: true, timeFormat: false}
       - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "Images", required: false, name: "images", widget: "image", allow_multiple: true}
+      - {label: "Images", label_singular: "Image", required: false, name: "images", widget: "list", field: {label: "Image", name: "image", widget: "image"}}
       - {label: "Links", required: false, name: "links", widget: "list"}
 
   - name: "blog"
@@ -76,7 +76,7 @@ collections:
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Description", name: "description", widget: "text"}
       - {label: "Featured Post", name: "featuredPost", widget: "boolean"}
-      - {label: "Featured Image", name: "featuredImage", widget: image}
+      - {label: "Images", label_singular: "Image", required: false, name: "images", widget: "list", field: {label: "Image", name: "image", widget: "image"}}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Tags", name: "tags", widget: "list"}
 
