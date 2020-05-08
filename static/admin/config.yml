@@ -11,6 +11,56 @@ backend:
 media_folder: static/img
 public_folder: /img
 
+ - name: "experiences"
+    label: "Experiences"
+    folder: "src/pages/experiences"
+    create: true
+    identifier_field: "company"
+    slug: "{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "experience"}
+      - {label: "Company", name: "company", widget: "string"}
+      - {label: "Start Date", name: "startDate", widget: "datetime", dateFormat: true, timeFormat: false}
+      - {label: "End Date", name: "endDate", widget: "datetime", dateFormat: true, timeFormat: false}
+      - {label: "Positions", name: "positions", widget: "list"}
+      - {label: "Descriptions", name: "descriptions", widget: "list", field: "markdown"}
+      - {label: "Images", name: "images", widget: "image", allow_multiple: true}
+      - {label: "Links", name: "links", widget: "list"}
+      - {label: "Technologies Used", name: "technologies", widget: "list"}
+
+  - name: "projects"
+    label: "Projects"
+    folder: "src/pages/projects"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "project"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Homepage", name: "homepage", widget: "string"}
+      - {label: "Start Date", name: "startDate", widget: "datetime", dateFormat: true, timeFormat: false}
+      - {label: "End Date", name: "endDate", widget: "datetime", dateFormat: true, timeFormat: false}
+      - {label: "Positions", name: "positions", widget: "list"}
+      - {label: "Descriptions", name: "descriptions", widget: "list", field: "markdown"}
+      - {label: "Images", name: "images", widget: "image", allow_multiple: true}
+      - {label: "Links", name: "links", widget: "list"}
+      - {label: "Technologies Used", name: "technologies", widget: "list"}
+
+  - name: "organizations"
+    label: "Organizations"
+    folder: "src/pages/organizations"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "organization"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Homepage", name: "homepage", widget: "string"}
+      - {label: "Start Date", name: "startDate", widget: "datetime", dateFormat: true, timeFormat: false}
+      - {label: "End Date", name: "endDate", widget: "datetime", dateFormat: true, timeFormat: false}
+      - {label: "Positions", name: "positions", widget: "list"}
+      - {label: "Descriptions", name: "descriptions", widget: "list", field: "markdown"}
+      - {label: "Images", name: "images", widget: "image", allow_multiple: true}
+      - {label: "Links", name: "links", widget: "list"}
+
 collections:
   - name: "blog"
     label: "Blog"
@@ -22,8 +72,8 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Description", name: "description", widget: "text"}
-      - {label: "Featured Post", name: "featuredpost", widget: "boolean"}
-      - {label: "Featured Image", name: "featuredimage", widget: image}
+      - {label: "Featured Post", name: "featuredPost", widget: "boolean"}
+      - {label: "Featured Image", name: "featuredImage", widget: image}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Tags", name: "tags", widget: "list"}
 
