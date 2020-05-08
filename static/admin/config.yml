@@ -22,12 +22,12 @@ collections:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "experience"}
       - {label: "Company", name: "company", widget: "string"}
       - {label: "Start Date", name: "startDate", widget: "datetime", dateFormat: true, timeFormat: false}
-      - {label: "End Date", name: "endDate", widget: "datetime", dateFormat: true, timeFormat: false}
+      - {label: "End Date", required: false, name: "endDate", widget: "datetime", dateFormat: true, timeFormat: false}
       - {label: "Positions", name: "positions", widget: "list"}
       - {label: "Descriptions", name: "descriptions", widget: "list", field: {label: "Description", name: "description", widget: "markdown"}}
-      - {label: "Images", name: "images", widget: "image", allow_multiple: true}
-      - {label: "Links", name: "links", widget: "list"}
-      - {label: "Technologies Used", name: "technologies", widget: "list"}
+      - {label: "Images", required: false, name: "images", widget: "image", allow_multiple: true}
+      - {label: "Links", required: false, name: "links", widget: "list"}
+      - {label: "Technologies Used", required: false, name: "technologies", widget: "list"}
 
   - name: "projects"
     label: "Projects"
@@ -37,14 +37,14 @@ collections:
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "project"}
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Homepage", name: "homepage", widget: "string"}
+      - {label: "Homepage", required: false, name: "homepage", widget: "string"}
       - {label: "Start Date", name: "startDate", widget: "datetime", dateFormat: true, timeFormat: false}
-      - {label: "End Date", name: "endDate", widget: "datetime", dateFormat: true, timeFormat: false}
+      - {label: "End Date", required: false, name: "endDate", widget: "datetime", dateFormat: true, timeFormat: false}
       - {label: "Positions", name: "positions", widget: "list"}
       - {label: "Descriptions", name: "descriptions", widget: "list", field: {label: "Description", name: "description", widget: "markdown"}}
-      - {label: "Images", name: "images", widget: "image", allow_multiple: true}
-      - {label: "Links", name: "links", widget: "list"}
-      - {label: "Technologies Used", name: "technologies", widget: "list"}
+      - {label: "Images", required: false, name: "images", widget: "image", allow_multiple: true}
+      - {label: "Links", required: false, name: "links", widget: "list"}
+      - {label: "Technologies Used", required: false, name: "technologies", widget: "list"}
 
   - name: "organizations"
     label: "Organizations"
@@ -54,13 +54,13 @@ collections:
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "organization"}
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Homepage", name: "homepage", widget: "string"}
+      - {label: "Homepage", required: false, name: "homepage", widget: "string"}
       - {label: "Start Date", name: "startDate", widget: "datetime", dateFormat: true, timeFormat: false}
-      - {label: "End Date", name: "endDate", widget: "datetime", dateFormat: true, timeFormat: false}
+      - {label: "End Date", required: false, name: "endDate", widget: "datetime", dateFormat: true, timeFormat: false}
       - {label: "Positions", name: "positions", widget: "list"}
       - {label: "Descriptions", name: "descriptions", widget: "list", field: {label: "Description", name: "description", widget: "markdown"}}
-      - {label: "Images", name: "images", widget: "image", allow_multiple: true}
-      - {label: "Links", name: "links", widget: "list"}
+      - {label: "Images", required: false, name: "images", widget: "image", allow_multiple: true}
+      - {label: "Links", required: false, name: "links", widget: "list"}
 
   - name: "blog"
     label: "Blog"
