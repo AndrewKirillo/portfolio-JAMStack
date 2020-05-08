@@ -11,7 +11,8 @@ backend:
 media_folder: static/img
 public_folder: /img
 
- - name: "experiences"
+collections:
+  - name: "experiences"
     label: "Experiences"
     folder: "src/pages/experiences"
     create: true
@@ -23,7 +24,7 @@ public_folder: /img
       - {label: "Start Date", name: "startDate", widget: "datetime", dateFormat: true, timeFormat: false}
       - {label: "End Date", name: "endDate", widget: "datetime", dateFormat: true, timeFormat: false}
       - {label: "Positions", name: "positions", widget: "list"}
-      - {label: "Descriptions", name: "descriptions", widget: "list", field: "markdown"}
+      - {label: "Descriptions", name: "descriptions", widget: "list", field: {label: "Description", name: "description", widget: "markdown"}}
       - {label: "Images", name: "images", widget: "image", allow_multiple: true}
       - {label: "Links", name: "links", widget: "list"}
       - {label: "Technologies Used", name: "technologies", widget: "list"}
@@ -40,7 +41,7 @@ public_folder: /img
       - {label: "Start Date", name: "startDate", widget: "datetime", dateFormat: true, timeFormat: false}
       - {label: "End Date", name: "endDate", widget: "datetime", dateFormat: true, timeFormat: false}
       - {label: "Positions", name: "positions", widget: "list"}
-      - {label: "Descriptions", name: "descriptions", widget: "list", field: "markdown"}
+      - {label: "Descriptions", name: "descriptions", widget: "list", field: {label: "Description", name: "description", widget: "markdown"}}
       - {label: "Images", name: "images", widget: "image", allow_multiple: true}
       - {label: "Links", name: "links", widget: "list"}
       - {label: "Technologies Used", name: "technologies", widget: "list"}
@@ -57,11 +58,10 @@ public_folder: /img
       - {label: "Start Date", name: "startDate", widget: "datetime", dateFormat: true, timeFormat: false}
       - {label: "End Date", name: "endDate", widget: "datetime", dateFormat: true, timeFormat: false}
       - {label: "Positions", name: "positions", widget: "list"}
-      - {label: "Descriptions", name: "descriptions", widget: "list", field: "markdown"}
+      - {label: "Descriptions", name: "descriptions", widget: "list", field: {label: "Description", name: "description", widget: "markdown"}}
       - {label: "Images", name: "images", widget: "image", allow_multiple: true}
       - {label: "Links", name: "links", widget: "list"}
 
-collections:
   - name: "blog"
     label: "Blog"
     folder: "src/pages/blog"
