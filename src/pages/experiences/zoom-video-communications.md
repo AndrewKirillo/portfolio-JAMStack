@@ -24,6 +24,7 @@ technologies:
   - AWS EC2
   - Zoom API
 ---
+#### Marketplace Developer Intern
 * Architected a video content management system (CMS) and discovery platform for Zoom Webinars with an integrated social network made up of brand-able channels, including 3rd party marketing integrations and a video analytics suite.
 
   * This was a prototype for a new product offering that was pitched to the CEO, Eric Yuan, and now a limited set of the proposed features is being experimented with on the Zoom website.
