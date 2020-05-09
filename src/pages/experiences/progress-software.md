@@ -14,6 +14,8 @@ technologies:
   - NativeScript
   - NativeChat
 ---
+#### Technical Marketing Intern
+
 * Tested NativeChat, Progress' chatbot development service, to ensure readiness for an upcoming marketing push.
 
   * This consisted of cross-platform testing using the NativeChat JSON-based chatbot framework to ensure a consistent user experience.
