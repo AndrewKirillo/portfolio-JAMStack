@@ -16,6 +16,8 @@ technologies:
   - Gatsby
   - Netlify
 ---
+#### Full-Stack Developer & Marketing Specialist
+
 * Managing all aspects of the Berkeley Gateway to Innovation (BEGIN) website, which serves to consolidate all of the resources across UC Berkeley's Innovation and Entrepreneurship ecosystem into one user-friendly and well-curated platform.
 
   * This included creating a custom Wordpress plugin with PHP that leverages the UC Berkeley Courses API and the Innovation Resource Database created in partnership with WITI and CS 169, our Software Engineering course.
