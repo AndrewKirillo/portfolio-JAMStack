@@ -6,6 +6,8 @@ startDate: 2017-05-08T05:13:04.900Z
 endDate: 2018-05-08T05:13:04.912Z
 images:
   - /img/tutorous_sceenshot.png
+links:
+  - _
 technologies:
   - Angular
   - Node
