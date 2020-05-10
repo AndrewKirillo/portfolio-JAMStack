@@ -10,6 +10,7 @@ images:
   - /img/blendscore.png
   - /img/belden_tech_talk.png
 links:
+  - _
   - https://dispatchgoods.com/home
   - https://blendoor.com/blendscore
   - https://www.facebook.com/events/1386612691513442/
