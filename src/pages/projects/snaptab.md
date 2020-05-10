@@ -8,7 +8,6 @@ endDate: 2020-05-08T04:54:44.175Z
 images:
   - /img/snaptab_dashboard.png
 links:
-  - https://chrome.google.com/webstore/detail/snaptab/iihldjnghemdinkkpmkoafbhlfbplplc
   - https://github.com/AndrewKirillo/SnapTab
 technologies:
   - Chrome API
