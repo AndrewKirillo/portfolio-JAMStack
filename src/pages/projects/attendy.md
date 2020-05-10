@@ -6,6 +6,8 @@ startDate: 2018-09-01T05:09:42.946Z
 endDate: 2018-09-30T05:09:42.960Z
 images:
   - /img/attendy_mockup.png
+links:
+  - _
 technologies:
   - Swift
   - Android Studio
