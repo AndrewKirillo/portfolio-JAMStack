@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet'
 import { Link, graphql } from 'gatsby'
 import Layout from '../../components/Layout'
 
-const TagsPage = ({
+const TechnologiesPage = ({
   data: {
     allMarkdownRemark: { group },
     site: {
@@ -14,19 +14,19 @@ const TagsPage = ({
 }) => (
   <Layout>
     <section className="section">
-      <Helmet title={`Tags | ${title}`} />
+      <Helmet title={`Technologies | ${title}`} />
       <div className="container content">
         <div className="columns">
           <div
             className="column is-10 is-offset-1"
             style={{ marginBottom: '6rem' }}
           >
-            <h1 className="title is-size-2 is-bold-light">Tags</h1>
-            <ul className="taglist">
-              {group.map((tag) => (
-                <li key={tag.fieldValue}>
-                  <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
-                    {tag.fieldValue} ({tag.totalCount})
+            <h1 className="title is-size-2 is-bold-light">Technologies</h1>
+            <ul className="technologylist">
+              {group.map((technology) => (
+                <li key={technology.fieldValue}>
+                  <Link to={`/technologies/${kebabCase(technology.fieldValue)}/`}>
+                    {technology.fieldValue} ({technology.totalCount})
                   </Link>
                 </li>
               ))}
@@ -38,17 +38,17 @@ const TagsPage = ({
   </Layout>
 )
 
-export default TagsPage
+export default TechnologiesPage
 
-export const tagPageQuery = graphql`
-  query TagsQuery {
+export const technologiesPageQuery = graphql`
+  query TechnologiesQuery {
     site {
       siteMetadata {
         title
       }
     }
     allMarkdownRemark(limit: 1000) {
-      group(field: frontmatter___tags) {
+      group(field: frontmatter___technologies) {
         fieldValue
         totalCount
       }

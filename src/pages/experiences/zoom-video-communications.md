@@ -1,6 +1,6 @@
 ---
 templateKey: experience
-company: Zoom Video Communications
+title: Zoom Video Communications
 logo: /img/zoom_logo.png
 startDate: 2019-06-01T04:37:44.943Z
 endDate: 2019-08-16T04:37:44.955Z

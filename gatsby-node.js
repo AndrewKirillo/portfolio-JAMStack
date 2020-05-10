@@ -16,7 +16,7 @@ exports.createPages = ({ actions, graphql }) => {
               slug
             }
             frontmatter {
-              tags
+              technologies
               templateKey
             }
           }
@@ -35,7 +35,7 @@ exports.createPages = ({ actions, graphql }) => {
       const id = edge.node.id
       createPage({
         path: edge.node.fields.slug,
-        tags: edge.node.frontmatter.tags,
+        technologies: edge.node.frontmatter.technologies,
         component: path.resolve(
           `src/templates/${String(edge.node.frontmatter.templateKey)}.js`
         ),
@@ -46,26 +46,26 @@ exports.createPages = ({ actions, graphql }) => {
       })
     })
 
-    // Tag pages:
-    let tags = []
-    // Iterate through each post, putting all found tags into `tags`
+    // Technology pages:
+    let technologies = []
+    // Iterate through each post, putting all found technologies into `technologies`
     posts.forEach((edge) => {
-      if (_.get(edge, `node.frontmatter.tags`)) {
-        tags = tags.concat(edge.node.frontmatter.tags)
+      if (_.get(edge, `node.frontmatter.technologies`)) {
+        technologies = technologies.concat(edge.node.frontmatter.technologies)
       }
     })
-    // Eliminate duplicate tags
-    tags = _.uniq(tags)
+    // Eliminate duplicate technologies
+    technologies = _.uniq(technologies)
 
-    // Make tag pages
-    tags.forEach((tag) => {
-      const tagPath = `/tags/${_.kebabCase(tag)}/`
+    // Make technology pages
+    technologies.forEach((technology) => {
+      const technologyPath = `/technologies/${_.kebabCase(technology)}/`
 
       createPage({
-        path: tagPath,
-        component: path.resolve(`src/templates/tags.js`),
+        path: technologyPath,
+        component: path.resolve(`src/templates/technologies.js`),
         context: {
-          tag,
+          technology,
         },
       })
     })

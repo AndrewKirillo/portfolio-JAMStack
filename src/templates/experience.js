@@ -10,7 +10,7 @@ import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 export const ExperienceTemplate = ({
   content,
   contentComponent,
-  company,
+  title,
   logo,
   startDate,
   endDate,
@@ -28,7 +28,7 @@ export const ExperienceTemplate = ({
             <PreviewCompatibleImage
               imageInfo={{
                 image: logo,
-                alt: `${company} logo`,
+                alt: `${title} logo`,
                 style: {
                   height: "3rem",
                   width: "3rem"
@@ -36,7 +36,7 @@ export const ExperienceTemplate = ({
               }}
             />
           </div>
-          <h2 className="company">{company}</h2>
+          <h2 className="company">{title}</h2>
           <h5 className="time">{startDate}{endDate ? ` - ${endDate}` : null} </h5>
         </div>
       </div>
@@ -63,7 +63,7 @@ export const ExperienceTemplate = ({
         <div className="technologies">
           { technologies ?
             technologies.map((technology, i) => (
-              <Link key={i} to={`/tags/${kebabCase(technology)}/`}>{technology}</Link>
+              <Link key={i} to={`/technologies/${kebabCase(technology)}/`}>{technology}</Link>
             )) : null
           }
         </div>
@@ -75,7 +75,7 @@ export const ExperienceTemplate = ({
 ExperienceTemplate.propTypes = {
   content: PropTypes.node.isRequired,
   contentComponent: PropTypes.func,
-  company: PropTypes.string,
+  title: PropTypes.string,
   startDate: PropTypes.string,
   endDate: PropTypes.string,
   images: PropTypes.array,
@@ -92,7 +92,7 @@ const Experience = ({ data }) => {
       <ExperienceTemplate
         content={post.html}
         contentComponent={HTMLContent}
-        company={post.frontmatter.company}
+        title={post.frontmatter.title}
         logo={post.frontmatter.logo}
         startDate={post.frontmatter.startDate}
         endDate={post.frontmatter.endDate ? post.frontmatter.endDate : null}
@@ -101,10 +101,10 @@ const Experience = ({ data }) => {
         technologies={post.frontmatter.technologies}
         helmet={
           <Helmet titleTemplate="%s | Blog">
-            <title>{`${post.frontmatter.company} Experience`}</title>
+            <title>{`${post.frontmatter.title} Experience`}</title>
             <meta
               name="description"
-              content={`Andrew Kirillov's experience working at ${post.frontmatter.company}`}
+              content={`Andrew Kirillov's experience working at ${post.frontmatter.title}`}
             />
           </Helmet>
         }
@@ -127,7 +127,7 @@ export const pageQuery = graphql`
       id
       html
       frontmatter {
-        company
+        title
         logo {
           childImageSharp {
               fluid(quality: 100) {

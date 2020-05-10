@@ -17,11 +17,10 @@ collections:
     label_singular: "Experience"
     folder: "src/pages/experiences"
     create: true
-    identifier_field: "company"
     slug: "{{slug}}"
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "experience"}
-      - {label: "Company", name: "company", widget: "string"}
+      - {label: "Title", name: "title", widget: "string"}
       - {label: "Logo", name: "logo", widget: "image"}
       - {label: "Start Date", name: "startDate", widget: "datetime", dateFormat: true, timeFormat: false}
       - {label: "End Date", required: false, name: "endDate", widget: "datetime", dateFormat: true, timeFormat: false}

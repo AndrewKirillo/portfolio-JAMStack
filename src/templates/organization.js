@@ -61,7 +61,7 @@ export const OrganizationTemplate = ({
         <div className="technologies">
           { technologies ?
             technologies.map((technology, i) => (
-              <Link key={i} to={`/tags/${kebabCase(technology)}/`}>{technology}</Link>
+              <Link key={i} to={`/technologies/${kebabCase(technology)}/`}>{technology}</Link>
             )) : null
           }
         </div>

@@ -36,7 +36,7 @@ export const ProjectTemplate = ({
                     }}
                 />
             </div>
-          <h2 className="company">{title}</h2>
+          <h2 className="project">{title}</h2>
           <h5 className="time">{startDate}{endDate ? ` - ${endDate}` : null} </h5>
         </div>
       </div>
@@ -63,7 +63,7 @@ export const ProjectTemplate = ({
         <div className="technologies">
           { technologies ?
             technologies.map((technology, i) => (
-              <Link key={i} to={`/tags/${kebabCase(technology)}/`}>{technology}</Link>
+              <Link key={i} to={`/technologies/${kebabCase(technology)}/`}>{technology}</Link>
             )) : null
           }
         </div>

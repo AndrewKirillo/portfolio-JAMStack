@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet'
 import { Link, graphql } from 'gatsby'
 import Layout from '../components/Layout'
 
-class TagRoute extends React.Component {
+class TechnologyRoute extends React.Component {
   render() {
     const posts = this.props.data.allMarkdownRemark.edges
     const postLinks = posts.map((post) => (
@@ -13,27 +13,27 @@ class TagRoute extends React.Component {
         </Link>
       </li>
     ))
-    const tag = this.props.pageContext.tag
+    const technology = this.props.pageContext.technology
     const title = this.props.data.site.siteMetadata.title
     const totalCount = this.props.data.allMarkdownRemark.totalCount
-    const tagHeader = `${totalCount} post${
+    const technologyHeader = `${totalCount} post${
       totalCount === 1 ? '' : 's'
-    } tagged with “${tag}”`
+    } tagged with “${technology}”`
 
     return (
       <Layout>
         <section className="section">
-          <Helmet title={`${tag} | ${title}`} />
+          <Helmet title={`${technology} | ${title}`} />
           <div className="container content">
             <div className="columns">
               <div
                 className="column is-10 is-offset-1"
                 style={{ marginBottom: '6rem' }}
               >
-                <h3 className="title is-size-4 is-bold-light">{tagHeader}</h3>
-                <ul className="taglist">{postLinks}</ul>
+                <h3 className="title is-size-4 is-bold-light">{technologyHeader}</h3>
+                <ul className="technologylist">{postLinks}</ul>
                 <p>
-                  <Link to="/tags/">Browse all tags</Link>
+                  <Link to="/technologies/">Browse all technologies</Link>
                 </p>
               </div>
             </div>
@@ -44,10 +44,10 @@ class TagRoute extends React.Component {
   }
 }
 
-export default TagRoute
+export default TechnologyRoute
 
-export const tagPageQuery = graphql`
-  query TagPage($tag: String) {
+export const technologyPageQuery = graphql`
+  query TechnologyPage($technology: String) {
     site {
       siteMetadata {
         title
@@ -56,7 +56,7 @@ export const tagPageQuery = graphql`
     allMarkdownRemark(
       limit: 1000
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { tags: { in: [$tag] } } }
+      filter: { frontmatter: { technologies: { in: [$technology] } } }
     ) {
       totalCount
       edges {

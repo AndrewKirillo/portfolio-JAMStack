@@ -1,6 +1,6 @@
 ---
 templateKey: experience
-company: Sutardja Center for Entrepreneurship and Technology
+title: Sutardja Center for Entrepreneurship and Technology
 logo: /img/scet_logo.png
 startDate: 2018-09-01T04:48:46.372Z
 endDate: ""

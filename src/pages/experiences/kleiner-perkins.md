@@ -1,6 +1,6 @@
 ---
 templateKey: experience
-company: Kleiner Perkins
+title: Kleiner Perkins
 logo: /img/kpcb_logo.png
 startDate: 2020-06-08T04:34:47.629Z
 endDate: 2020-08-14T04:34:47.645Z

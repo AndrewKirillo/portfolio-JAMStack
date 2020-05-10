@@ -1,6 +1,6 @@
 ---
 templateKey: experience
-company: Progress Software
+title: Progress Software
 logo: /img/progress.png
 startDate: 2019-02-27T05:44:49.676Z
 endDate: 2019-05-17T04:44:49.687Z
