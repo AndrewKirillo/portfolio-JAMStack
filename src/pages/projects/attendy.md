@@ -11,6 +11,9 @@ links:
 technologies:
   - Swift
   - Android Studio
+  - Node
+  - Express
+  - MongoDB
 ---
 #### Co-Creator
 
