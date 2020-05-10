@@ -29,6 +29,8 @@
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "react-helmet": "^6.0.0",
+    "react-slick": "^0.26.0",
+    "slick-carousel": "^1.8.1",
     "uuid": "^7.0.0"
   },
   "keywords": [
