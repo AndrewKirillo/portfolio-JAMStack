@@ -34,16 +34,14 @@ class OrganizationsIndexPage extends React.Component {
                     organization = organization.node;
                     return (
                       <OrganizationTemplate
-                        key={i}
                         content={organization.html}
                         contentComponent={HTMLContent}
                         title={organization.frontmatter.title}
                         logo={organization.frontmatter.logo}
                         startDate={organization.frontmatter.startDate}
-                        endDate={organization.frontmatter.endDate ? organization.frontmatter.endDate : null}
-                        images={organization.frontmatter.images.length > 0 ? organization.frontmatter.images : null}
-                        links={organization.frontmatter.links}
-                        technologies={organization.frontmatter.technologies}
+                        endDate={organization.frontmatter.endDate && organization.frontmatter.endDate}
+                        images={organization.frontmatter.images && organization.frontmatter.images}
+                        links={organization.frontmatter.links && organization.frontmatter.links}
                         helmet={
                           <Helmet titleTemplate="%s | Blog">
                             <title>{`${organization.frontmatter.title}`}</title>
@@ -97,7 +95,6 @@ export default () => (
                   }
                 }
                 links
-                technologies
               }
             }
           }

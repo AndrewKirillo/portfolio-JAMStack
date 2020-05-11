@@ -85,25 +85,25 @@ ProjectTemplate.propTypes = {
 }
 
 const Project = ({ data }) => {
-  const { markdownRemark: post } = data
+  const { markdownRemark: project } = data
   return (
     <Layout>
       <ProjectTemplate
-        content={post.html}
+        content={project.html}
         contentComponent={HTMLContent}
-        title={post.frontmatter.title}
-        logo={post.frontmatter.logo}
-        startDate={post.frontmatter.startDate}
-        endDate={post.frontmatter.endDate}
-        images={post.frontmatter.images}
-        links={post.frontmatter.links}
-        technologies={post.frontmatter.technologies}
+        title={project.frontmatter.title}
+        logo={project.frontmatter.logo}
+        startDate={project.frontmatter.startDate}
+        endDate={project.frontmatter.endDate && project.frontmatter.endDate}
+        images={project.frontmatter.images && project.frontmatter.images}
+        links={project.frontmatter.links && project.frontmatter.links}
+        technologies={project.frontmatter.technologies && project.frontmatter.technologies}
         helmet={
           <Helmet titleTemplate="%s | Blog">
-            <title>{`${post.frontmatter.title}`}</title>
+            <title>{`${project.frontmatter.title}`}</title>
             <meta
               name="description"
-              content={`${post.frontmatter.title}: A project by Andrew Kirillov.`}
+              content={`${project.frontmatter.title}: A project by Andrew Kirillov.`}
             />
           </Helmet>
         }

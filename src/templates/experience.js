@@ -85,26 +85,26 @@ ExperienceTemplate.propTypes = {
 }
 
 const Experience = ({ data }) => {
-  const { markdownRemark: post } = data
+  const { markdownRemark: experience } = data
 
   return (
     <Layout>
       <ExperienceTemplate
-        content={post.html}
+        content={experience.html}
         contentComponent={HTMLContent}
-        title={post.frontmatter.title}
-        logo={post.frontmatter.logo}
-        startDate={post.frontmatter.startDate}
-        endDate={post.frontmatter.endDate ? post.frontmatter.endDate : null}
-        images={post.frontmatter.images.length > 0 ? post.frontmatter.images : null}
-        links={post.frontmatter.links}
-        technologies={post.frontmatter.technologies}
+        title={experience.frontmatter.title}
+        logo={experience.frontmatter.logo}
+        startDate={experience.frontmatter.startDate}
+        endDate={experience.frontmatter.endDate && experience.frontmatter.endDate}
+        images={experience.frontmatter.images && experience.frontmatter.images}
+        links={experience.frontmatter.links && experience.frontmatter.links}
+        technologies={experience.frontmatter.technologies && experience.frontmatter.technologies}
         helmet={
           <Helmet titleTemplate="%s | Blog">
-            <title>{`${post.frontmatter.title} Experience`}</title>
+            <title>{`${experience.frontmatter.title} Experience`}</title>
             <meta
               name="description"
-              content={`Andrew Kirillov's experience working at ${post.frontmatter.title}`}
+              content={`Andrew Kirillov's experience working at ${experience.frontmatter.title}`}
             />
           </Helmet>
         }

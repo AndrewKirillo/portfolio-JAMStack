@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { kebabCase } from 'lodash'
 import { Helmet } from 'react-helmet'
 import { graphql, Link } from 'gatsby'
 import Layout from '../components/Layout'
@@ -16,7 +15,6 @@ export const OrganizationTemplate = ({
   endDate,
   images,
   links,
-  technologies,
   helmet,
 }) => {
   const PostContent = contentComponent || Content
@@ -58,13 +56,6 @@ export const OrganizationTemplate = ({
             ))
           }
         </div>
-        <div className="technologies">
-          { technologies ?
-            technologies.map((technology, i) => (
-              <Link key={i} to={`/technologies/${kebabCase(technology)}/`}>{technology}</Link>
-            )) : null
-          }
-        </div>
       </div>
     </section>
   )
@@ -78,30 +69,28 @@ OrganizationTemplate.propTypes = {
   endDate: PropTypes.string,
   images: PropTypes.array,
   links: PropTypes.array,
-  technologies: PropTypes.array,
   helmet: PropTypes.object,
 }
 
 const Organization = ({ data }) => {
-  const { markdownRemark: post } = data
+  const { markdownRemark: organization } = data
   return (
     <Layout>
       <OrganizationTemplate
-        content={post.html}
+        content={organization.html}
         contentComponent={HTMLContent}
-        title={post.frontmatter.title}
-        logo={post.frontmatter.logo}
-        startDate={post.frontmatter.startDate}
-        endDate={post.frontmatter.endDate}
-        images={post.frontmatter.images}
-        links={post.frontmatter.links}
-        technologies={post.frontmatter.technologies}
+        title={organization.frontmatter.title}
+        logo={organization.frontmatter.logo}
+        startDate={organization.frontmatter.startDate}
+        endDate={organization.frontmatter.endDate && organization.frontmatter.endDate}
+        images={organization.frontmatter.images && organization.frontmatter.images}
+        links={organization.frontmatter.links && organization.frontmatter.links}
         helmet={
           <Helmet titleTemplate="%s | Blog">
-            <title>{`${post.frontmatter.title}`}</title>
+            <title>{`${organization.frontmatter.title}`}</title>
             <meta
               name="description"
-              content={`Andrew Kirillov's involvement with ${post.frontmatter.title}`}
+              content={`Andrew Kirillov's involvement with ${organization.frontmatter.title}`}
             />
           </Helmet>
         }
