@@ -45,7 +45,7 @@ export const ExperienceTemplate = ({
         <div className="media">
           {
             images.map((image, i) => (
-              <a key={i} href={links && links[i] && links[i]} target="_blank" rel="noopener noreferrer">
+              <a key={i} href={links[i]} target="_blank" rel="noopener noreferrer">
                 <PreviewCompatibleImage
                   imageInfo={{
                     image,

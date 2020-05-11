@@ -19,7 +19,7 @@ export const OrganizationTemplate = ({
   technologies,
   helmet,
 }) => {
-  const PostContent = contentComponent || Content
+  const PostContent = contentComponent || Content;
   return (
     <section>
       <div className="meta">
@@ -35,7 +35,7 @@ export const OrganizationTemplate = ({
                 }}
             />
           <h2 className="company">{title}</h2>
-          <h5 className="time">{startDate}{endDate ? ` - ${endDate}` : null} </h5>
+          <h5 className="time">{startDate} - {endDate ? endDate : "Present"} </h5>
         </div>
       </div>
       <div className="slide-content">
