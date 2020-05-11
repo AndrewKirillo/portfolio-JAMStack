@@ -34,15 +34,16 @@ class ExperiencesIndexPage extends React.Component {
                     experience = experience.node;
                     return (
                       <ExperienceTemplate
+                        key={i}
                         content={experience.html}
                         contentComponent={HTMLContent}
                         title={experience.frontmatter.title}
                         logo={experience.frontmatter.logo}
                         startDate={experience.frontmatter.startDate}
-                        endDate={experience.frontmatter.endDate && experience.frontmatter.endDate}
-                        images={experience.frontmatter.images && experience.frontmatter.images}
-                        links={experience.frontmatter.links && experience.frontmatter.links}
-                        technologies={experience.frontmatter.technologies && experience.frontmatter.technologies}
+                        endDate={experience.frontmatter.endDate ? experience.frontmatter.endDate : null}
+                        images={experience.frontmatter.images.length > 0 ? experience.frontmatter.images : null}
+                        links={experience.frontmatter.links}
+                        technologies={experience.frontmatter.technologies}
                         helmet={
                           <Helmet titleTemplate="%s | Blog">
                             <title>{`${experience.frontmatter.title} Experience`}</title>

@@ -34,15 +34,16 @@ class ProjectsIndexPage extends React.Component {
                     project = project.node;
                     return (
                       <ProjectTemplate
+                        key={i}
                         content={project.html}
                         contentComponent={HTMLContent}
                         title={project.frontmatter.title}
                         logo={project.frontmatter.logo}
                         startDate={project.frontmatter.startDate}
-                        endDate={project.frontmatter.endDate && project.frontmatter.endDate}
-                        images={project.frontmatter.images && project.frontmatter.images}
-                        links={project.frontmatter.links && project.frontmatter.links}
-                        technologies={project.frontmatter.technologies && project.frontmatter.technologies}
+                        endDate={project.frontmatter.endDate ? project.frontmatter.endDate : null}
+                        images={project.frontmatter.images.length > 0 ? project.frontmatter.images : null}
+                        links={project.frontmatter.links}
+                        technologies={project.frontmatter.technologies}
                         helmet={
                           <Helmet titleTemplate="%s | Blog">
                             <title>{`${project.frontmatter.title}`}</title>
