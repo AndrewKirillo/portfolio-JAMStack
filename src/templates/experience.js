@@ -19,7 +19,7 @@ export const ExperienceTemplate = ({
   technologies,
   helmet,
 }) => {
-  const PostContent = contentComponent || Content
+  const PostContent = contentComponent || Content;
   return (
     <section>
       <div className="meta">
@@ -37,7 +37,7 @@ export const ExperienceTemplate = ({
             />
           </div>
           <h2 className="company">{title}</h2>
-          <h5 className="time">{startDate}{endDate ? ` - ${endDate}` : null} </h5>
+          <h5 className="time">{startDate} - {endDate ? endDate : "Present"} </h5>
         </div>
       </div>
       <div className="slide-content">
@@ -45,7 +45,7 @@ export const ExperienceTemplate = ({
         <div className="media">
           {
             images.map((image, i) => (
-              <a key={i} href={links[i]} target="_blank" rel="noopener noreferrer">
+              <a key={i} href={links && links[i] && links[i]} target="_blank" rel="noopener noreferrer">
                 <PreviewCompatibleImage
                   imageInfo={{
                     image,

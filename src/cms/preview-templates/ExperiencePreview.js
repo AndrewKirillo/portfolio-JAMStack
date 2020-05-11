@@ -2,23 +2,32 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { ExperienceTemplate } from '../../templates/experience'
 
-const ExperiencePreview = ({ entry, widgetFor }) => {
-    const endDate = entry.getIn(['data', 'endDate'])
-    const images = entry.getIn(['data', 'images'])
+const ExperiencePreview = ({ entry, widgetFor, widgetsFor, getAsset }) => {
     const links = entry.getIn(['data', 'links'])
     const technologies = entry.getIn(['data', 'technologies'])
-  return (
-    <ExperienceTemplate
-        content={widgetFor('body')}
-        title={entry.getIn(['data', 'title'])}
-        logo={entry.getIn(['data', 'logo'])}
-        startDate={entry.getIn(['data', 'startDate'])}
-        endDate={endDate && endDate}
-        images={images && images.toJS()}
-        links={links && links.toJS()}
-        technologies={technologies && technologies.toJS()}
-    />
-  )
+    const logo = entry.getIn(['data', 'logo']);
+    const images = [];
+    widgetsFor('images').map(image => {
+        if (image) {
+            console.log(image._root.entries[0][1]);
+            images.push(image._root.entries[0][1]);
+        }
+    });
+
+    console.log(images);
+
+    return (
+        <ExperienceTemplate
+            content={widgetFor('body')}
+            title={widgetFor('title')}
+            logo={getAsset(logo).toString()}
+            startDate={widgetFor('startDate')}
+            endDate={widgetFor('endDate')}
+            images={images}
+            links={links && links.toJS()}
+            technologies={technologies && technologies.toJS()}
+        />
+    )
 }
 
 ExperiencePreview.propTypes = {
