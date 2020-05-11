@@ -4,8 +4,8 @@ import { ExperienceTemplate } from '../../templates/experience'
 
 const ExperiencePreview = ({ entry, widgetFor }) => {
     const endDate = entry.getIn(['data', 'endDate'])
-    const images = entry.getIn(['data', 'tags'])
-    const links = entry.getIn(['data', 'tags'])
+    const images = entry.getIn(['data', 'images'])
+    const links = entry.getIn(['data', 'links'])
     const technologies = entry.getIn(['data', 'technologies'])
   return (
     <ExperienceTemplate
@@ -13,7 +13,7 @@ const ExperiencePreview = ({ entry, widgetFor }) => {
         title={entry.getIn(['data', 'title'])}
         logo={entry.getIn(['data', 'logo'])}
         startDate={entry.getIn(['data', 'startDate'])}
-        endDate={endDate && endDate.toJS()}
+        endDate={endDate && endDate}
         images={images && images.toJS()}
         links={links && links.toJS()}
         technologies={technologies && technologies.toJS()}
