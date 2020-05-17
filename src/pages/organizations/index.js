@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql, StaticQuery } from 'gatsby'
 import { HTMLContent } from '../../components/Content'
 import Layout from '../../components/Layout'
-import { OrganizationTemplate } from '../../templates/organization'
+import SlideContentTemplate from '../../components/SlideContent'
 import { Helmet } from 'react-helmet'
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
@@ -33,7 +33,7 @@ class OrganizationsIndexPage extends React.Component {
                   organizations.map((organization, i) => {
                     organization = organization.node;
                     return (
-                      <OrganizationTemplate
+                      <SlideContentTemplate
                         key={i}
                         content={organization.html}
                         contentComponent={HTMLContent}

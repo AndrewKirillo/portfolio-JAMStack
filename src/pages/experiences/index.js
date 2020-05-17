@@ -2,11 +2,11 @@ import React from 'react'
 import { graphql, StaticQuery } from 'gatsby'
 import { HTMLContent } from '../../components/Content'
 import Layout from '../../components/Layout'
-import { ExperienceTemplate } from '../../templates/experience'
+import SlideContentTemplate from '../../components/SlideContent'
 import { Helmet } from 'react-helmet'
-import Slider from 'react-slick';
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import Slider from 'react-slick'
+import "slick-carousel/slick/slick.css"
+import "slick-carousel/slick/slick-theme.css"
 
 
 class ExperiencesIndexPage extends React.Component {
@@ -33,7 +33,7 @@ class ExperiencesIndexPage extends React.Component {
                   experiences.map((experience, i) => {
                     experience = experience.node;
                     return (
-                      <ExperienceTemplate
+                      <SlideContentTemplate
                         key={i}
                         content={experience.html}
                         contentComponent={HTMLContent}

@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql, StaticQuery } from 'gatsby'
 import { HTMLContent } from '../../components/Content'
 import Layout from '../../components/Layout'
-import { ProjectTemplate } from '../../templates/project'
+import SlideContentTemplate from '../../components/SlideContent'
 import { Helmet } from 'react-helmet'
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
@@ -33,7 +33,7 @@ class ProjectsIndexPage extends React.Component {
                   projects.map((project, i) => {
                     project = project.node;
                     return (
-                      <ProjectTemplate
+                      <SlideContentTemplate
                         key={i}
                         content={project.html}
                         contentComponent={HTMLContent}
